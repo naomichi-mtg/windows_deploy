@@ -4,4 +4,4 @@ Param(
   $FileSystem = "NTFS",
   $Number = 2
 )
-Get-Disk | where Number -match $Number | Initialize-Disk -PartitionStyle $PartitionStyle -PassThru | New-Partition -UseMaximumSize -DriveLetter $DriveLetter | Format-Volume -FileSystem NTFS -Force;
+Get-Disk | where Number -match $Number | Initialize-Disk -PartitionStyle $PartitionStyle -PassThru | New-Partition -UseMaximumSize -DriveLetter $DriveLetter | Format-Volume -FileSystem $FileSystem -Force;
